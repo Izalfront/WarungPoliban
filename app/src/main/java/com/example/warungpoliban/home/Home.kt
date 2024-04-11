@@ -1,6 +1,7 @@
 package com.example.warungpoliban.home
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -52,10 +53,6 @@ fun listNamaWarung(){
             color = Color.Black,
             style = TextStyle(fontWeight = FontWeight.SemiBold, fontSize = 18.sp)
         )
-        Spacer(modifier = Modifier.padding(top = 8.dp))
-        Column (modifier = Modifier.fillMaxSize()){
-            listWarung()
-        }
     }
 }
 
@@ -66,8 +63,11 @@ fun previewHome(){
         modifier = Modifier
             .padding(12.dp)
             .fillMaxSize()
+            .background(Color.White)
     ){
         mapWarung()
         listNamaWarung()
+        Spacer(modifier = Modifier.padding(top = 8.dp, bottom = 8.dp))
+        listWarung()
     }
 }
