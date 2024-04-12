@@ -24,3 +24,6 @@ object WarungRepository {
         DataListWarung(3, "Warung C", "Wilayah Z", R.drawable.warung_c)
     )
 }
+
+// cara agar bg wilayah berwarna jadi di setiap data dipasang nama variabel color yg sesuai
+// sebelum itu inisialisasi dahulu setiap variabel color sebelum dipanggil
