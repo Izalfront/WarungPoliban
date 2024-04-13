@@ -37,20 +37,46 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.warungpoliban.R
-import com.example.warungpoliban.ui.theme.RedText
 import kotlinx.coroutines.launch
 
 data class DataListWarung (
     val id : Int,
     val namaWarung : String,
     val wilayah : String,
+    val textColor : Color,
+    val bgColor : Color,
     val image : Int
 )
+
+object Coloring{
+    val RedTextBg = Color(0xFFFFD3D3)
+    val RedText = Color(0xFFEE4040)
+
+    val YellowTextBg = Color(0xFFFFF8D3)
+    val YellowText = Color(0xFFA98B1D)
+
+    val BlueTextBg = Color(0xFFD3E2FF)
+    val BlueText = Color(0xFF1D44A9)
+
+    val PurpleTextBg = Color(0xFFF6D3FF)
+    val PurpleText = Color(0xFF8630BB)
+
+    val OrangeTextBg = Color(0xFFFEC8AA)
+    val OrangeText = Color(0xFFA9581D)
+
+    val CyanTextBg = Color(0xFFAAEFFE)
+    val CyanText = Color(0xFF1D90A9)
+
+    val PrimaryRed = Color(0xFFEE4040)
+}
 object WarungRepository {
     val daftarWarung = listOf(
-        DataListWarung(1, "Warung A", "Wilayah X", R.drawable.warung_a),
-        DataListWarung(2, "Warung B", "Wilayah Y", R.drawable.warung_b),
-        DataListWarung(3, "Warung C", "Wilayah Z", R.drawable.warung_c)
+        DataListWarung(1, "Warung A", "Wilayah A",Coloring.RedText,Coloring.RedTextBg, R.drawable.warung_a),
+        DataListWarung(2, "Warung B", "Wilayah B",Coloring.YellowText,Coloring.YellowTextBg, R.drawable.warung_b),
+        DataListWarung(3, "Warung C", "Wilayah C",Coloring.BlueText,Coloring.BlueTextBg, R.drawable.warung_c),
+        DataListWarung(4, "Warung D", "Wilayah D",Coloring.PurpleText,Coloring.PurpleTextBg, R.drawable.warung_d),
+        DataListWarung(5, "Warung E", "Wilayah E",Coloring.OrangeText,Coloring.OrangeTextBg, R.drawable.warung_e),
+        DataListWarung(6, "Warung F", "Wilayah F",Coloring.CyanText,Coloring.CyanTextBg, R.drawable.warung_f)
     )
 }
 
@@ -94,14 +120,15 @@ fun WarungItem(warung: DataListWarung, onClick: () -> Unit){
                         Text(
                             modifier = Modifier
                                 .background(
-                                    Color.Red.copy(alpha = 0.1f),
+//                                    Color.Red.copy(alpha = 0.1f),
+                                    warung.bgColor,
                                     shape = RoundedCornerShape(20.dp)
                                 )
                                 .padding(horizontal = 12.dp, vertical = 6.dp)
                                 .clip(shape = RoundedCornerShape(12.dp)),
                             text = warung.wilayah,
                             fontSize = 10.sp,
-                            color = RedText
+                            color = warung.textColor
                         )
                         Spacer(modifier = Modifier.padding(bottom = 12.dp))
                         Text(

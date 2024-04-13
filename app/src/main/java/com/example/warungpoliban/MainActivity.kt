@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.warungpoliban.home.previewHome
+import com.example.warungpoliban.listCard.WarungList
 import com.example.warungpoliban.ui.theme.WarungPolibanTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,9 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WarungPolibanTheme {
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-
-                }
+                previewHome()
             }
         }
     }
