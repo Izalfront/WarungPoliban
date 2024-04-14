@@ -88,7 +88,7 @@ fun WarungItem(warung: DataListWarung, onClick: () -> Unit){
                     .fillMaxWidth()
                     .height(120.dp)
                     .wrapContentWidth()
-                    .clickable { },
+                    .clickable(onClick = onClick),
                 shape = MaterialTheme.shapes.small,
                 colors = CardDefaults.cardColors(
                     containerColor = Color.White,
