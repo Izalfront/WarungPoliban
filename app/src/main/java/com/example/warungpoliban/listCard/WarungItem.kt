@@ -71,9 +71,9 @@ object Coloring{
 }
 object WarungRepository {
     val daftarWarung = listOf(
-        DataListWarung(1, "Warung A", "Wilayah A",Coloring.RedText,Coloring.RedTextBg, R.drawable.warung_a),
+        DataListWarung(1, "Warung A", "Wilayah A",Coloring.RedText,Coloring.RedTextBg, R.drawable.warung_c),
         DataListWarung(2, "Warung B", "Wilayah B",Coloring.YellowText,Coloring.YellowTextBg, R.drawable.warung_b),
-        DataListWarung(3, "Warung C", "Wilayah C",Coloring.BlueText,Coloring.BlueTextBg, R.drawable.warung_c),
+        DataListWarung(3, "Warung C", "Wilayah C",Coloring.BlueText,Coloring.BlueTextBg, R.drawable.warung_a),
         DataListWarung(4, "Warung D", "Wilayah D",Coloring.PurpleText,Coloring.PurpleTextBg, R.drawable.warung_d),
         DataListWarung(5, "Warung E", "Wilayah E",Coloring.OrangeText,Coloring.OrangeTextBg, R.drawable.warung_e),
         DataListWarung(6, "Warung F", "Wilayah F",Coloring.CyanText,Coloring.CyanTextBg, R.drawable.warung_f)
