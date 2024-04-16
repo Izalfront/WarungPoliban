@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.warungpoliban.R
 import com.example.warungpoliban.listCard.WarungList
 
@@ -55,9 +56,8 @@ fun listNamaWarung(){
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun previewHome(){
+fun Home(navController: NavHostController? = null) {
     Column(
         modifier = Modifier
             .padding(12.dp)
@@ -70,4 +70,10 @@ fun previewHome(){
 //        listwarung ini yg akan di looping
         WarungList()
     }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun PreviewHome(){
+    Home()
 }

@@ -30,6 +30,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.warungpoliban.R
 
 data class DataListMakanan (
@@ -178,6 +180,8 @@ fun MakananList() {
     }
 }
 
+
+
 // Gambar Warung Detail
 @Composable
 fun ImageWarung(){
@@ -193,13 +197,18 @@ fun ImageWarung(){
         )
     }
 }
-@Preview(showBackground = true)
+
 @Composable
-fun PreviewListMakanan(){
+fun DetailHalaman(navController: NavController? = null){
     Column {
         ImageWarung()
         ListCategory()
         Spacer(modifier = Modifier.padding(vertical = 6.dp))
         MakananList()
     }
+}
+@Preview(showBackground = true)
+@Composable
+fun PreviewListMakanan(){
+    DetailHalaman()
 }

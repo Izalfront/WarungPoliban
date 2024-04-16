@@ -36,6 +36,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.warungpoliban.R
 import kotlinx.coroutines.launch
 
@@ -156,7 +157,7 @@ fun WarungItem(warung: DataListWarung, onClick: () -> Unit){
         }
 
 @Composable
-fun WarungList() {
+fun WarungList(navController: NavController? = null) {
     val coroutineScope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -165,7 +166,11 @@ fun WarungList() {
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(8.dp),
+                    .padding(8.dp)
+                    .clickable {
+                        // Navigasi ke halaman detail jika navController tidak null dan id warung tidak null
+                        navController?.navigate("detail/${warung.id}")
+                    },
                 shape = MaterialTheme.shapes.medium
             ) {
                 WarungItem(warung = warung) {
@@ -182,8 +187,9 @@ fun WarungList() {
     SnackbarHost(snackbarHostState)
 }
 
-@Preview(showBackground = true)
+
+//@Preview(showBackground = true)
 @Composable
-fun PreviewListWarung() {
-    WarungList()
+fun PreviewListWarung(navController: NavController) {
+    WarungList(navController = navController)
 }
